@@ -1,6 +1,8 @@
 -- Author: Diego Almeida
 -- Desafio 6.4: Prueba Modulo SQL
 
+-- LINK AL VIDEO: https://youtu.be/_TfNPzWNQsY
+
 
 -- Begin sesion with the following command on the terminal (en mac: psql -U postgres -W)
 
@@ -288,7 +290,7 @@ SELECT preguntas.pregunta, COUNT(respuestas.respuesta) as Respuestas_correctas F
 -- Implementa borrado en cascada de las respuestas al borrar un usuario y borrar el primer usuario para probar la implementación. (1 punto)
 
 
-ALTER TABLE respuestas DROP CONSTRAINT respuestas_usuario_id_foreignkey, ADD FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE;
+ALTER TABLE respuestas DROP CONSTRAINT respuestas_usuario_id_fkey, ADD FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE;
 
 
 DELETE FROM usuarios WHERE id = 1;
@@ -356,3 +358,8 @@ UPDATE usuarios SET email = 'diegoalmeidaz@gmail.com' WHERE id=7;
   4 | Javiera  |   30 | 
   5 | Sofia    |   25 | 
   7 | Diego    |   36 | diegoalmeidaz@gmail.com
+
+
+
+
+  -- Fin del desafio
